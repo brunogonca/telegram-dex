@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "es6",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
@@ -12,10 +12,15 @@
     "paths": {
       "@server/*": ["server/*"],
       "@bot/*": ["bot/*"],
-      "@src/*": ["src/*"],
-      "@tests/*": ["tests/*"]
+      "@tests/*": ["tests/*"],
+      "@frontend/*": ["frontend/src/*"]
     }
   },
-  "include": ["server/**/*.ts", "bot/**/*.ts", "src/**/*.ts", "tests/**/*.ts"],
+  "include": [
+    "server/**/*.ts",
+    "bot/**/*.ts",
+    "frontend/src/**/*.tsx",
+    ".global.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
