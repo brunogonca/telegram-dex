@@ -1,4 +1,3 @@
-// src/handlers/callbackQueryHandler.ts
 import TelegramBot from "node-telegram-bot-api";
 import { DummyButton } from "../buttons/dummyButton";
 

@@ -1,4 +1,3 @@
-// src/handlers/messageHandler.ts
 import TelegramBot from "node-telegram-bot-api";
 import { DummyButton } from "../buttons/dummyButton";
 
@@ -17,6 +16,10 @@ export function handleMessage(
       },
     };
 
-    bot.sendMessage(chatId, "Bem-vindo! Este é um botão dummy.", options);
+    bot.sendMessage(
+      chatId,
+      "Bem-vindo! Clique no botão abaixo para conectar sua carteira.",
+      options
+    );
   }
 }

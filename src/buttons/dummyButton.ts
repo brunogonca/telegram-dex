@@ -1,12 +1,12 @@
-// src/buttons/dummyButton.ts
 import TelegramBot from "node-telegram-bot-api";
+import Web3 from "web3";
 import { Button } from "../interfaces/button";
 
 export class DummyButton implements Button {
   getButton(): TelegramBot.InlineKeyboardButton {
     return {
-      text: "Clique aqui",
-      callback_data: "dummy_data",
+      text: "Clique aqui para conectar a carteira",
+      url: "https://improved-fortnight-5pv564p7x59f4jqj-3000.app.github.dev/connect-wallet", // URL da nova página Next.js
     };
   }
 
@@ -14,14 +14,10 @@ export class DummyButton implements Button {
     bot: TelegramBot,
     query: TelegramBot.CallbackQuery
   ): void {
-    const chatId = query.message?.chat.id;
-
     if (query.data === "dummy_data") {
-      bot.answerCallbackQuery(query.id, { text: "Botão dummy clicado!" });
-
-      if (chatId) {
-        bot.sendMessage(chatId, "Você clicou no botão dummy!");
-      }
+      bot.answerCallbackQuery(query.id, {
+        text: "Redirecionando para conectar a carteira...",
+      });
     }
   }
 }
